@@ -1,0 +1,42 @@
+#!/usr/bin/env logo
+
+TO shead nm qp
+  TEST nm >= COUNT qp
+  ifTRUE  [
+    OUTPUT qp
+  ]
+  ifFALSE [
+    OUTPUT shead nm BL qp
+  ]
+END
+
+TO stail nm qp
+  TEST nm >= COUNT qp
+  ifTRUE  [
+    OUTPUT qp
+  ]
+  ifFALSE [
+   OUTPUT stail nm BF qp
+  ]
+END
+
+TO vspace qp
+  REPEAT qp [
+    PRINT "
+  ]
+END
+
+MAKE "epoch (LAST SHELL [date +%s])
+MAKE "tab "|	|
+
+TO beadgcf rf qp
+  PR (WORD tab rf "-beadgcf- ( LAST epoch))
+  PR (WORD tab (stail 35 qp) (shead 25 qp)) ; Fn
+  PR (WORD tab (stail  0 qp) (shead 60 qp)) ; Cn
+  PR (WORD tab (stail 25 qp) (shead 35 qp)) ; Gn
+  PR (WORD tab (stail 50 qp) (shead 10 qp)) ; Dn
+  PR (WORD tab (stail 15 qp) (shead 45 qp)) ; An
+  PR (WORD tab (stail 40 qp) (shead 20 qp)) ; En
+  PR (WORD tab (stail  5 qp) (shead 55 qp)) ; Bn
+END
+

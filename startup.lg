@@ -1,0 +1,23 @@
+#!/usr/bin/env logo
+
+MAKE "CASEIGNOREDP "false ; case-sensitive properties
+
+LOAD "zeitgeist.lg
+LOAD "heraclitus.lg
+
+NAME ARRAY 2 "aeon
+SETITEM 1 aeon "j36
+SETITEM 2 aeon "k15
+
+vspace 2
+
+beadgcf (ITEM 1 aeon) (GPROP "ZG (ITEM 1 aeon))
+
+vspace 2
+
+beadgcf (ITEM 2 aeon) (GPROP "ZG (ITEM 2 aeon))
+
+vspace 2
+
+bye
+
