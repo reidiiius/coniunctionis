@@ -1,4 +1,16 @@
-#!/usr/bin/env logo
+#!/usr/bin/env ucblogo
+
+MAKE "epoch (LAST LAST SHELL [date +%s])
+
+TO hTab
+  OUTPUT CHAR 9
+END
+
+TO vTab qp
+  REPEAT qp [
+    PRINT CHAR 11
+  ]
+END
 
 TO shead nm qp
   TEST nm >= COUNT qp
@@ -20,23 +32,90 @@ TO stail nm qp
   ]
 END
 
-TO vspace qp
-  REPEAT qp [
-    PRINT "
+TO strBj qp
+  OUTPUT WORD (stail 10 qp) (shead 50 qp)
+END
+
+TO strFn qp
+  OUTPUT WORD (stail 35 qp) (shead 25 qp)
+END
+
+TO strCn qp
+  OUTPUT WORD (stail  0 qp) (shead 60 qp)
+END
+
+TO strGn qp
+  OUTPUT WORD (stail 25 qp) (shead 35 qp)
+END
+
+TO strDn qp
+  OUTPUT WORD (stail 50 qp) (shead 10 qp)
+END
+
+TO strAn qp
+  OUTPUT WORD (stail 15 qp) (shead 45 qp)
+END
+
+TO strEn qp
+  OUTPUT WORD (stail 40 qp) (shead 20 qp)
+END
+
+TO strBn qp
+  OUTPUT WORD (stail  5 qp) (shead 55 qp)
+END
+
+TO strFk qp
+  OUTPUT WORD (stail 30 qp) (shead 30 qp)
+END
+
+TO fkbjdn qp
+  PR  WORD hTab strDn qp
+  PR  WORD hTab strBj qp
+  PR  WORD hTab strFk qp
+END
+
+TO maj3rds key qp
+  PR (WORD hTab key "-fkbjdn-sv epoch)
+  REPEAT 2 [
+    fkbjdn qp
   ]
 END
 
-MAKE "epoch (LAST SHELL [date +%s])
-MAKE "tab "|	|
+TO stdGtr key qp
+  PR (WORD hTab key "-eadgbe-sv epoch)
+  PR  WORD hTab strEn qp
+  PR  WORD hTab strBn qp
+  PR  WORD hTab strGn qp
+  PR  WORD hTab strDn qp
+  PR  WORD hTab strAn qp
+  PR  WORD hTab strEn qp
+END
 
-TO beadgcf rf qp
-  PR (WORD tab rf "-beadgcf- ( LAST epoch))
-  PR (WORD tab (stail 35 qp) (shead 25 qp)) ; Fn
-  PR (WORD tab (stail  0 qp) (shead 60 qp)) ; Cn
-  PR (WORD tab (stail 25 qp) (shead 35 qp)) ; Gn
-  PR (WORD tab (stail 50 qp) (shead 10 qp)) ; Dn
-  PR (WORD tab (stail 15 qp) (shead 45 qp)) ; An
-  PR (WORD tab (stail 40 qp) (shead 20 qp)) ; En
-  PR (WORD tab (stail  5 qp) (shead 55 qp)) ; Bn
+TO all4ths key qp
+  PR (WORD hTab key "-beadgcf-sv epoch)
+  PR  WORD hTab strFn qp
+  PR  WORD hTab strCn qp
+  PR  WORD hTab strGn qp
+  PR  WORD hTab strDn qp
+  PR  WORD hTab strAn qp
+  PR  WORD hTab strEn qp
+  PR  WORD hTab strBn qp
+END
+
+TO cello5ths key qp
+  PR (WORD hTab key "-cgdae-sv epoch)
+  PR  WORD hTab strEn qp
+  PR  WORD hTab strAn qp
+  PR  WORD hTab strDn qp
+  PR  WORD hTab strGn qp
+  PR  WORD hTab strCn qp
+END
+
+TO triTones key qp
+  PR (WORD hTab key "-bfbf-sv epoch)
+  PR  WORD hTab strFn qp
+  PR  WORD hTab strBn qp
+  PR  WORD hTab strFn qp
+  PR  WORD hTab strBn qp
 END
 

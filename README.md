@@ -12,7 +12,7 @@ Mysterium
 ### Usage
 command line
 
-    cd coniunctionis && logo
+    cd coniunctionis && ucblogo
 
 ---
 
