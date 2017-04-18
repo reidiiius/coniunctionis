@@ -6,117 +6,117 @@ TO hTab
   OUTPUT CHAR 9
 END
 
-TO vTab qp
-  REPEAT qp [
+TO vTab :qp
+  REPEAT :qp [
     PRINT CHAR 11
   ]
 END
 
-TO shead nm qp
-  TEST nm >= COUNT qp
+TO sHead :nbr :qp
+  TEST :nbr >= COUNT :qp
   ifTRUE  [
-    OUTPUT qp
+    OUTPUT :qp
   ]
   ifFALSE [
-    OUTPUT shead nm BL qp
+    OUTPUT sHead :nbr BL :qp
   ]
 END
 
-TO stail nm qp
-  TEST nm >= COUNT qp
+TO sTail :nbr :qp
+  TEST :nbr >= COUNT :qp
   ifTRUE  [
-    OUTPUT qp
+    OUTPUT :qp
   ]
   ifFALSE [
-   OUTPUT stail nm BF qp
+   OUTPUT sTail :nbr BF :qp
   ]
 END
 
-TO strBj qp
-  OUTPUT WORD (stail 10 qp) (shead 50 qp)
+TO strBj :qp
+  OUTPUT WORD (sTail 10 :qp) (sHead 50 :qp)
 END
 
-TO strFn qp
-  OUTPUT WORD (stail 35 qp) (shead 25 qp)
+TO strFn :qp
+  OUTPUT WORD (sTail 35 :qp) (sHead 25 :qp)
 END
 
-TO strCn qp
-  OUTPUT WORD (stail  0 qp) (shead 60 qp)
+TO strCn :qp
+  OUTPUT WORD (sTail  0 :qp) (sHead 60 :qp)
 END
 
-TO strGn qp
-  OUTPUT WORD (stail 25 qp) (shead 35 qp)
+TO strGn :qp
+  OUTPUT WORD (sTail 25 :qp) (sHead 35 :qp)
 END
 
-TO strDn qp
-  OUTPUT WORD (stail 50 qp) (shead 10 qp)
+TO strDn :qp
+  OUTPUT WORD (sTail 50 :qp) (sHead 10 :qp)
 END
 
-TO strAn qp
-  OUTPUT WORD (stail 15 qp) (shead 45 qp)
+TO strAn :qp
+  OUTPUT WORD (sTail 15 :qp) (sHead 45 :qp)
 END
 
-TO strEn qp
-  OUTPUT WORD (stail 40 qp) (shead 20 qp)
+TO strEn :qp
+  OUTPUT WORD (sTail 40 :qp) (sHead 20 :qp)
 END
 
-TO strBn qp
-  OUTPUT WORD (stail  5 qp) (shead 55 qp)
+TO strBn :qp
+  OUTPUT WORD (sTail  5 :qp) (sHead 55 :qp)
 END
 
-TO strFk qp
-  OUTPUT WORD (stail 30 qp) (shead 30 qp)
+TO strFk :qp
+  OUTPUT WORD (sTail 30 :qp) (sHead 30 :qp)
 END
 
-TO fkbjdn qp
-  PR  WORD hTab strDn qp
-  PR  WORD hTab strBj qp
-  PR  WORD hTab strFk qp
+TO augmenTriad :qp
+  PR  WORD hTab strDn :qp
+  PR  WORD hTab strBj :qp
+  PR  WORD hTab strFk :qp
 END
 
-TO maj3rds key qp
-  PR (WORD hTab key "-fkbjdn-sv noise)
+TO maj3rds :key :qp
+  PR (WORD hTab :key "-fkbjdn-sv noise)
   REPEAT 2 [
-    fkbjdn qp
+    augmenTriad :qp
   ]
 END
 
-TO stdGtr key qp
-  PR (WORD hTab key "-eadgbe-sv noise)
-  PR  WORD hTab strEn qp
-  PR  WORD hTab strBn qp
-  PR  WORD hTab strGn qp
-  PR  WORD hTab strDn qp
-  PR  WORD hTab strAn qp
-  PR  WORD hTab strEn qp
+TO stdGtr :key :qp
+  PR (WORD hTab :key "-eadgbe-sv noise)
+  PR  WORD hTab strEn :qp
+  PR  WORD hTab strBn :qp
+  PR  WORD hTab strGn :qp
+  PR  WORD hTab strDn :qp
+  PR  WORD hTab strAn :qp
+  PR  WORD hTab strEn :qp
 END
 
-TO all4ths key qp
-  PR (WORD hTab key "-beadgcf-sv noise)
-  PR  WORD hTab strFn qp
-  PR  WORD hTab strCn qp
-  PR  WORD hTab strGn qp
-  PR  WORD hTab strDn qp
-  PR  WORD hTab strAn qp
-  PR  WORD hTab strEn qp
-  PR  WORD hTab strBn qp
+TO all4ths :key :qp
+  PR (WORD hTab :key "-beadgcf-sv noise)
+  PR  WORD hTab strFn :qp
+  PR  WORD hTab strCn :qp
+  PR  WORD hTab strGn :qp
+  PR  WORD hTab strDn :qp
+  PR  WORD hTab strAn :qp
+  PR  WORD hTab strEn :qp
+  PR  WORD hTab strBn :qp
 END
 
-TO cello5ths key qp
-  PR (WORD hTab key "-cgdae-sv noise)
-  PR  WORD hTab strEn qp
-  PR  WORD hTab strAn qp
-  PR  WORD hTab strDn qp
-  PR  WORD hTab strGn qp
-  PR  WORD hTab strCn qp
+TO cello5ths :key :qp
+  PR (WORD hTab :key "-cgdae-sv noise)
+  PR  WORD hTab strEn :qp
+  PR  WORD hTab strAn :qp
+  PR  WORD hTab strDn :qp
+  PR  WORD hTab strGn :qp
+  PR  WORD hTab strCn :qp
 END
 
-TO triTones key qp
-  PR (WORD hTab key "-bfbf-sv noise)
-  PR  WORD hTab strFn qp
-  PR  WORD hTab strBn qp
-  PR  WORD hTab strFn qp
-  PR  WORD hTab strBn qp
+TO triTones :key :qp
+  PR (WORD hTab :key "-bfbf-sv noise)
+  PR  WORD hTab strFn :qp
+  PR  WORD hTab strBn :qp
+  PR  WORD hTab strFn :qp
+  PR  WORD hTab strBn :qp
 END
 
 TO displayMenu
@@ -140,20 +140,36 @@ TO displayMenu
   vTab 1
 END
 
-TO aeon qp
+TO Plano.Graphic :qp
   CLEARTEXT
-  IF AND (MEMBERP FIRST qp PLIST "ZG) (MEMBERP LAST qp PLIST "ZG) [
+  IF (EQUALP :qp []) [
+    LOCALMAKE "qp [n0 n0]
+  ]
+  IF AND (MEMBERP FIRST :qp PLIST "ZG) (MEMBERP LAST :qp PLIST "ZG) [
     vTab 1
-    stdGtr (FIRST qp) (GPROP "ZG (FIRST qp))
+      stdGtr (FIRST :qp) (GPROP "ZG (FIRST :qp))
     vTab 1
-    stdGtr ( LAST qp) (GPROP "ZG ( LAST qp))
+      stdGtr ( LAST :qp) (GPROP "ZG ( LAST :qp))
     vTab 1
+  ]
+  IF OR (NOT MEMBERP FIRST :qp PLIST "ZG) (NOT MEMBERP LAST :qp PLIST "ZG)[
+    vTab 2
+      PR SE hTab [Check your selection!]
+    vTab 1
+      PR (SE hTab "Example: [k56x4 j56y7])
+    vTab 1
+      WAIT 120
+      PR (SE hTab [Focus and try again!])
+    vTab 4
+      WAIT 120
+      CLEARTEXT
+    Litho.Graphic
   ]
 END
 
-TO mainProc
+TO Litho.Graphic
   displayMenu
   PR [Enter two (2) signatures from above ^]
-  aeon READLIST
+  Plano.Graphic READLIST
 END
 

@@ -4,14 +4,8 @@ LOAD "zeitgeist.lg
 LOAD "heraclitus.lg
 
 MAKE "CASEIGNOREDP "false ; properties case-sensitive
-MAKE "ERRACT [
-  IF (GREATEREQUALP FIRST ERROR 0) [
-    CLEARTEXT
-    BYE
-  ]
-]
 
-mainProc
+Litho.Graphic
 
 ERALL
 ; SHOW CONTENTS
