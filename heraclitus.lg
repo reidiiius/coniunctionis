@@ -1,6 +1,6 @@
 #!/usr/bin/env ucblogo
 
-MAKE "epoch (LAST LAST SHELL [date +%s])
+MAKE "noise (RANDOM 2147483646) ; (LAST LAST SHELL [date +%s])
 
 TO hTab
   OUTPUT CHAR 9
@@ -75,14 +75,14 @@ TO fkbjdn qp
 END
 
 TO maj3rds key qp
-  PR (WORD hTab key "-fkbjdn-sv epoch)
+  PR (WORD hTab key "-fkbjdn-sv noise)
   REPEAT 2 [
     fkbjdn qp
   ]
 END
 
 TO stdGtr key qp
-  PR (WORD hTab key "-eadgbe-sv epoch)
+  PR (WORD hTab key "-eadgbe-sv noise)
   PR  WORD hTab strEn qp
   PR  WORD hTab strBn qp
   PR  WORD hTab strGn qp
@@ -92,7 +92,7 @@ TO stdGtr key qp
 END
 
 TO all4ths key qp
-  PR (WORD hTab key "-beadgcf-sv epoch)
+  PR (WORD hTab key "-beadgcf-sv noise)
   PR  WORD hTab strFn qp
   PR  WORD hTab strCn qp
   PR  WORD hTab strGn qp
@@ -103,7 +103,7 @@ TO all4ths key qp
 END
 
 TO cello5ths key qp
-  PR (WORD hTab key "-cgdae-sv epoch)
+  PR (WORD hTab key "-cgdae-sv noise)
   PR  WORD hTab strEn qp
   PR  WORD hTab strAn qp
   PR  WORD hTab strDn qp
@@ -112,7 +112,7 @@ TO cello5ths key qp
 END
 
 TO triTones key qp
-  PR (WORD hTab key "-bfbf-sv epoch)
+  PR (WORD hTab key "-bfbf-sv noise)
   PR  WORD hTab strFn qp
   PR  WORD hTab strBn qp
   PR  WORD hTab strFn qp
