@@ -5,7 +5,7 @@ LOAD "heraclitus.lg
 
 MAKE "CASEIGNOREDP "false ; properties case-sensitive
 
-Litho.Graphic
+design.Lithographic
 
 ERALL
 ; SHOW CONTENTS

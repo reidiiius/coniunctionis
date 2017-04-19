@@ -1,127 +1,18 @@
 #!/usr/bin/env ucblogo
 
-MAKE "noise (RANDOM 2147483646) ; (LAST LAST SHELL [date +%s])
-
-TO hTab
+TO ctrl.ht
   OUTPUT CHAR 9
 END
 
-TO vTab :qp
+TO ctrl.vt :qp
   REPEAT :qp [
     PRINT CHAR 11
   ]
 END
 
-TO sHead :nbr :qp
-  TEST :nbr >= COUNT :qp
-  ifTRUE  [
-    OUTPUT :qp
-  ]
-  ifFALSE [
-    OUTPUT sHead :nbr BL :qp
-  ]
-END
-
-TO sTail :nbr :qp
-  TEST :nbr >= COUNT :qp
-  ifTRUE  [
-    OUTPUT :qp
-  ]
-  ifFALSE [
-   OUTPUT sTail :nbr BF :qp
-  ]
-END
-
-TO strBj :qp
-  OUTPUT WORD (sTail 10 :qp) (sHead 50 :qp)
-END
-
-TO strFn :qp
-  OUTPUT WORD (sTail 35 :qp) (sHead 25 :qp)
-END
-
-TO strCn :qp
-  OUTPUT WORD (sTail  0 :qp) (sHead 60 :qp)
-END
-
-TO strGn :qp
-  OUTPUT WORD (sTail 25 :qp) (sHead 35 :qp)
-END
-
-TO strDn :qp
-  OUTPUT WORD (sTail 50 :qp) (sHead 10 :qp)
-END
-
-TO strAn :qp
-  OUTPUT WORD (sTail 15 :qp) (sHead 45 :qp)
-END
-
-TO strEn :qp
-  OUTPUT WORD (sTail 40 :qp) (sHead 20 :qp)
-END
-
-TO strBn :qp
-  OUTPUT WORD (sTail  5 :qp) (sHead 55 :qp)
-END
-
-TO strFk :qp
-  OUTPUT WORD (sTail 30 :qp) (sHead 30 :qp)
-END
-
-TO augmenTriad :qp
-  PR  WORD hTab strDn :qp
-  PR  WORD hTab strBj :qp
-  PR  WORD hTab strFk :qp
-END
-
-TO maj3rds :key :qp
-  PR (WORD hTab :key "-fkbjdn-sv noise)
-  REPEAT 2 [
-    augmenTriad :qp
-  ]
-END
-
-TO stdGtr :key :qp
-  PR (WORD hTab :key "-eadgbe-sv noise)
-  PR  WORD hTab strEn :qp
-  PR  WORD hTab strBn :qp
-  PR  WORD hTab strGn :qp
-  PR  WORD hTab strDn :qp
-  PR  WORD hTab strAn :qp
-  PR  WORD hTab strEn :qp
-END
-
-TO all4ths :key :qp
-  PR (WORD hTab :key "-beadgcf-sv noise)
-  PR  WORD hTab strFn :qp
-  PR  WORD hTab strCn :qp
-  PR  WORD hTab strGn :qp
-  PR  WORD hTab strDn :qp
-  PR  WORD hTab strAn :qp
-  PR  WORD hTab strEn :qp
-  PR  WORD hTab strBn :qp
-END
-
-TO cello5ths :key :qp
-  PR (WORD hTab :key "-cgdae-sv noise)
-  PR  WORD hTab strEn :qp
-  PR  WORD hTab strAn :qp
-  PR  WORD hTab strDn :qp
-  PR  WORD hTab strGn :qp
-  PR  WORD hTab strCn :qp
-END
-
-TO triTones :key :qp
-  PR (WORD hTab :key "-bfbf-sv noise)
-  PR  WORD hTab strFn :qp
-  PR  WORD hTab strBn :qp
-  PR  WORD hTab strFn :qp
-  PR  WORD hTab strBn :qp
-END
-
-TO displayMenu
+TO design.displayMenu
   CLEARTEXT
-  vTab 1
+  ctrl.vt 1
   PR "|	n0 	k6 	j17 	k6x5 	j17y2 	j3     |
   PR "|	j34k6 	j17k2 	n26y5 	k26x5 	j6 	j36    |
   PR "|	k56 	j136y7 	k56x4 	n167x4 	j3k5x4 	j167y2 |
@@ -137,39 +28,146 @@ TO displayMenu
   PR "|	k125 	k12 	k12j5 	k2x1 	k2j5 	k25x1  |
   PR "|	k2j56 	k257x1 	k25x17 	k2j5y6 	k2j5x1 	k1j5   |
   PR "|	n67x2 	k1j56y7 j2k5 	n6x2 	j25 	j256   |
-  vTab 1
+  ctrl.vt 1
 END
 
-TO Plano.Graphic :qp
+TO design.Lithographic
+  design.displayMenu
+  PR [Enter two (2) signatures from above ^]
+  design.Planographic READLIST
+END
+
+TO design.Planographic :qp
   CLEARTEXT
   IF (EQUALP :qp []) [
     LOCALMAKE "qp [n0 n0]
   ]
-  IF AND (MEMBERP FIRST :qp PLIST "ZG) (MEMBERP LAST :qp PLIST "ZG) [
-    vTab 1
-      stdGtr (FIRST :qp) (GPROP "ZG (FIRST :qp))
-    vTab 1
-      stdGtr ( LAST :qp) (GPROP "ZG ( LAST :qp))
-    vTab 1
+  IF AND (MEMBERP FIRST :qp PLIST "zg) (MEMBERP LAST :qp PLIST "zg) [
+    ctrl.vt 1
+      tuning.all4ths (FIRST :qp) (GPROP "zg (FIRST :qp))
+    ctrl.vt 1
+      tuning.all4ths ( LAST :qp) (GPROP "zg ( LAST :qp))
+    ctrl.vt 1
   ]
-  IF OR (NOT MEMBERP FIRST :qp PLIST "ZG) (NOT MEMBERP LAST :qp PLIST "ZG)[
-    vTab 2
-      PR SE hTab [Check your selection!]
-    vTab 1
-      PR (SE hTab "Example: [k56x4 j56y7])
-    vTab 1
+  IF OR (NOT MEMBERP FIRST :qp PLIST "zg) (NOT MEMBERP LAST :qp PLIST "zg)[
+    ctrl.vt 2
+      PR SE ctrl.ht [Check your selection!]
+    ctrl.vt 1
+      PR (SE ctrl.ht "Example: [k1j6 j3k5])
+    ctrl.vt 1
       WAIT 120
-      PR (SE hTab [Focus and try again!])
-    vTab 4
+      PR (SE ctrl.ht [Focus and try again!])
+    ctrl.vt 4
       WAIT 120
       CLEARTEXT
-    Litho.Graphic
+    design.Lithographic
   ]
 END
 
-TO Litho.Graphic
-  displayMenu
-  PR [Enter two (2) signatures from above ^]
-  Plano.Graphic READLIST
+TO str.An :qp
+  OUTPUT WORD (str.Tail 15 :qp) (str.Head 45 :qp)
+END
+
+TO str.Bj :qp
+  OUTPUT WORD (str.Tail 10 :qp) (str.Head 50 :qp)
+END
+
+TO str.Bn :qp
+  OUTPUT WORD (str.Tail  5 :qp) (str.Head 55 :qp)
+END
+
+TO str.Cn :qp
+  OUTPUT WORD (str.Tail  0 :qp) (str.Head 60 :qp)
+END
+
+TO str.Dn :qp
+  OUTPUT WORD (str.Tail 50 :qp) (str.Head 10 :qp)
+END
+
+TO str.En :qp
+  OUTPUT WORD (str.Tail 40 :qp) (str.Head 20 :qp)
+END
+
+TO str.Fk :qp
+  OUTPUT WORD (str.Tail 30 :qp) (str.Head 30 :qp)
+END
+
+TO str.Fn :qp
+  OUTPUT WORD (str.Tail 35 :qp) (str.Head 25 :qp)
+END
+
+TO str.Gn :qp
+  OUTPUT WORD (str.Tail 25 :qp) (str.Head 35 :qp)
+END
+
+TO str.Head :nbr :qp
+  TEST :nbr >= COUNT :qp
+  ifTRUE  [
+    OUTPUT THING "qp
+  ]
+  ifFALSE [
+    OUTPUT str.Head :nbr BL :qp
+  ]
+END
+
+TO str.Tail :nbr :qp
+  TEST :nbr >= COUNT :qp
+  ifTRUE  [
+    OUTPUT THING "qp
+  ]
+  ifFALSE [
+   OUTPUT str.Tail :nbr BF :qp
+  ]
+END
+
+TO tuning.all4ths :key :qp
+  PR (WORD ctrl.ht :key "-beadgcf-sv sequeNoise)
+  PR  WORD ctrl.ht str.Fn :qp
+  PR  WORD ctrl.ht str.Cn :qp
+  PR  WORD ctrl.ht str.Gn :qp
+  PR  WORD ctrl.ht str.Dn :qp
+  PR  WORD ctrl.ht str.An :qp
+  PR  WORD ctrl.ht str.En :qp
+  PR  WORD ctrl.ht str.Bn :qp
+END
+
+TO tuning.augmenTriad :qp
+  PR  WORD ctrl.ht str.Dn :qp
+  PR  WORD ctrl.ht str.Bj :qp
+  PR  WORD ctrl.ht str.Fk :qp
+END
+
+TO tuning.cello5ths :key :qp
+  PR (WORD ctrl.ht :key "-cgdae-sv sequeNoise)
+  PR  WORD ctrl.ht str.En :qp
+  PR  WORD ctrl.ht str.An :qp
+  PR  WORD ctrl.ht str.Dn :qp
+  PR  WORD ctrl.ht str.Gn :qp
+  PR  WORD ctrl.ht str.Cn :qp
+END
+
+TO tuning.maj3rds :key :qp
+  PR (WORD ctrl.ht :key "-fkbjdn-sv sequeNoise)
+  REPEAT 2 [
+    tuning.augmenTriad :qp
+  ]
+END
+
+TO tuning.stdGtr :key :qp
+  PR (WORD ctrl.ht :key "-eadgbe-sv sequeNoise)
+  PR  WORD ctrl.ht str.En :qp
+  PR  WORD ctrl.ht str.Bn :qp
+  PR  WORD ctrl.ht str.Gn :qp
+  PR  WORD ctrl.ht str.Dn :qp
+  PR  WORD ctrl.ht str.An :qp
+  PR  WORD ctrl.ht str.En :qp
+END
+
+TO tuning.triTones :key :qp
+  PR (WORD ctrl.ht :key "-bfbf-sv sequeNoise)
+  PR  WORD ctrl.ht str.Fn :qp
+  PR  WORD ctrl.ht str.Bn :qp
+  PR  WORD ctrl.ht str.Fn :qp
+  PR  WORD ctrl.ht str.Bn :qp
 END
 

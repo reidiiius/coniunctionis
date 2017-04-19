@@ -1,88 +1,88 @@
 #!/usr/bin/env ucblogo
 
-GLOBAL "ZG
+MAKE "sequeNoise RANDOM 2147483646
 
-      PPROP "ZG "j2 "|HgHg PuFe ____ ____ CuNp PbAu ____ AuPb ____ AgUr ____ FePu |
-      PPROP "ZG "j3 "|HgSn ____ SnHg UrFe ____ PbAg ____ AuAu ____ AgPb ____ FeUr |
-      PPROP "ZG "j5 "|PbCu ____ AuSn ____ AgHg TiFe FeTi ____ ____ SnAu ____ CuPb |
-      PPROP "ZG "j6 "|HgAu ____ SnPb ____ CuUr PbSn ____ AuHg NpFe ____ ____ FeNp |
-      PPROP "ZG "k1 "|____ FeUr HgSn ____ SnHg UrFe ____ PbAg ____ AuAu ____ AgPb |
-      PPROP "ZG "k2 "|NpCu ____ ____ FePu HgHg PuFe ____ UrAg ____ PbAu ____ AuPb |
-      PPROP "ZG "k5 "|UrCu ____ PbSn ____ AuHg NpFe ____ ____ FeNp HgAu ____ SnPb |
-      PPROP "ZG "k6 "|HgAg ____ SnAu ____ CuPb PbCu ____ AuSn ____ ____ TiFe FeTi |
-      PPROP "ZG "n0 "|HgCu ____ SnSn ____ CuHg PbFe ____ AuAg ____ AgAu ____ FePb |
-     PPROP "ZG "j17 "|____ ____ SnAu ____ CuPb PbCu ____ AuSn ____ AgHg TiFe FeTi |
-     PPROP "ZG "j23 "|HgHg PuFe ____ UrAg ____ PbAu ____ AuPb ____ AgUr ____ FePu |
-     PPROP "ZG "j25 "|FeCu HgMn ____ ____ MnHg CuFe PbTi ____ ____ NpAu ____ TiPb |
-     PPROP "ZG "j26 "|HgHg PuFe ____ ____ CuNp PbAu ____ AuPb NpCu ____ ____ FePu |
-     PPROP "ZG "j36 "|HgAu ____ SnPb UrCu ____ PbSn ____ AuHg NpFe ____ ____ FeNp |
-     PPROP "ZG "j56 "|UrCu ____ PbSn ____ AuHg NpFe AgTi ____ FeNp ____ ____ SnPb |
-     PPROP "ZG "k12 "|____ AgUr ____ FePu HgHg PuFe ____ UrAg ____ PbAu ____ AuPb |
-     PPROP "ZG "k15 "|____ CuUr PbSn ____ AuHg NpFe ____ ____ FeNp HgAu ____ SnPb |
-     PPROP "ZG "k25 "|NpCu ____ ____ FePu HgHg PuFe ____ ____ CuNp PbAu ____ AuPb |
-     PPROP "ZG "k26 "|HgMn ____ ____ MnHg CuFe PbTi ____ AuNp ____ ____ TiPb FeCu |
-     PPROP "ZG "k34 "|PbCu ____ AuSn ____ ____ TiFe FeTi HgAg ____ SnAu ____ CuPb |
-     PPROP "ZG "k56 "|HgAu ____ SnPb ____ CuUr PbSn ____ ____ NpFe ____ TiAg FeNp |
-    PPROP "ZG "j236 "|HgHg PuFe ____ UrAg ____ PbAu ____ AuPb NpCu ____ ____ FePu |
-    PPROP "ZG "j256 "|FeCu HgMn ____ ____ MnHg CuFe PbTi ____ AuNp ____ ____ TiPb |
-    PPROP "ZG "j2k5 "|FeCu HgMn ____ ____ MnHg CuFe ____ ____ AuNp NpAu ____ TiPb |
-    PPROP "ZG "j2k6 "|HgHg PuFe ____ ____ CuNp PbAu ____ AuPb ____ ____ TiSn FePu |
-    PPROP "ZG "j2y3 "|HgHg PuFe SnTi ____ ____ PbAu ____ AuPb ____ AgUr ____ FePu |
-    PPROP "ZG "j3k5 "|NpCu ____ TiSn FePu ____ PuFe ____ ____ CuNp PbAu ____ AuPb |
-    PPROP "ZG "j3k6 "|HgTi ____ SnNp UrAu ____ PbPb ____ AuUr ____ ____ TiHg FeFe |
-    PPROP "ZG "j5y6 "|PbCu ____ AuSn ____ AgHg TiFe FeTi HgAg ____ ____ ____ CuPb |
-    PPROP "ZG "k125 "|____ AgUr ____ FePu HgHg PuFe ____ ____ CuNp PbAu ____ AuPb |
-    PPROP "ZG "k1j5 "|____ AuUr NpSn ____ TiHg FeFe HgTi ____ ____ UrAu ____ PbPb |
-    PPROP "ZG "k1j6 "|____ PuFe SnTi ____ CuNp PbAu ____ AuPb NpCu ____ ____ FePu |
-    PPROP "ZG "k256 "|HgMn ____ ____ MnHg CuFe PbTi ____ ____ NpAu ____ TiPb FeCu |
-    PPROP "ZG "k2j5 "|NpCu ____ ____ FePu HgHg PuFe SnTi ____ ____ PbAu ____ AuPb |
-    PPROP "ZG "k2j6 "|HgMn ____ ____ MnHg CuFe PbTi ____ AuNp NpAu ____ ____ FeCu |
-    PPROP "ZG "k2x1 "|____ ____ TiSn FePu HgHg PuFe ____ UrAg ____ PbAu ____ AuPb |
-    PPROP "ZG "k6x5 "|HgAg ____ SnAu ____ CuPb PbCu ____ ____ ____ AgHg TiFe FeTi |
-    PPROP "ZG "n167 "|NpCu ____ ____ FePu ____ PuFe SnTi ____ CuNp PbAu ____ AuPb |
-    PPROP "ZG "n345 "|____ PuFe ____ ____ CuNp PbAu ____ AuPb NpCu ____ TiSn FePu |
-    PPROP "ZG "n5y2 "|HgMn ____ ____ MnHg CuFe ____ ____ AuNp NpAu ____ TiPb FeCu |
-    PPROP "ZG "n6x2 "|FeCu HgMn ____ ____ MnHg CuFe PbTi ____ AuNp NpAu ____ ____ |
-   PPROP "ZG "j17k2 "|____ ____ ____ MnFe CuTi PbAg ____ AuAu ____ AgPb TiCu FeMn |
-   PPROP "ZG "j17y2 "|HgAg ____ ____ ____ CuPb PbCu ____ AuSn ____ AgHg TiFe FeTi |
-   PPROP "ZG "j23k6 "|HgHg PuFe ____ UrAg ____ PbAu ____ AuPb ____ ____ TiSn FePu |
-   PPROP "ZG "j25y6 "|TiCu FeMn ____ ____ SnHg MnFe CuTi PbAg ____ ____ ____ AgPb |
-   PPROP "ZG "j26y3 "|HgHg PuFe SnTi ____ ____ PbAu ____ AuPb NpCu ____ ____ FePu |
-   PPROP "ZG "j2k34 "|TiCu FeMn ____ ____ ____ MnFe CuTi PbAg ____ AuAu ____ AgPb |
-   PPROP "ZG "j2k56 "|HgHg PuFe ____ ____ CuNp PbAu ____ ____ NpCu ____ TiSn FePu |
-   PPROP "ZG "j34k6 "|HgSn ____ SnHg MnFe CuTi ____ ____ AuAu ____ ____ TiCu FeMn |
-   PPROP "ZG "j56y7 "|UrCu ____ PbSn ____ AuHg NpFe AgTi ____ FeNp HgAu ____ ____ |
-   PPROP "ZG "k12j5 "|____ AgUr ____ FePu HgHg PuFe SnTi ____ ____ PbAu ____ AuPb |
-   PPROP "ZG "k17j5 "|TiCu FeMn HgSn ____ SnHg MnFe CuTi ____ ____ AuAu ____ ____ |
-   PPROP "ZG "k25x1 "|____ ____ TiSn FePu HgHg PuFe ____ ____ CuNp PbAu ____ AuPb |
-   PPROP "ZG "k26x5 "|HgSn ____ ____ MnFe CuTi PbAg ____ ____ ____ AgPb TiCu FeMn |
-   PPROP "ZG "k2j56 "|NpCu ____ ____ FePu HgHg PuFe SnTi ____ CuNp ____ ____ AuPb |
-   PPROP "ZG "k34x2 "|PbCu ____ ____ ____ AgHg TiFe FeTi HgAg ____ SnAu ____ CuPb |
-   PPROP "ZG "k56x4 "|HgAu ____ SnPb ____ CuUr ____ ____ AuHg NpFe ____ TiAg FeNp |
-   PPROP "ZG "n25x6 "|TiCu FeMn HgSn ____ ____ MnFe CuTi PbAg ____ ____ ____ AgPb |
-   PPROP "ZG "n26y5 "|____ ____ SnHg MnFe CuTi PbAg ____ ____ ____ AgPb TiCu FeMn |
-   PPROP "ZG "n45y2 "|HgTi ____ ____ UrAu ____ PbPb ____ AuUr NpSn ____ TiHg FeFe |
-   PPROP "ZG "n67x2 "|____ AuUr ____ ____ TiHg FeFe HgTi ____ SnNp UrAu ____ PbPb |
-  PPROP "ZG "j136y7 "|____ ____ SnPb UrCu ____ PbSn ____ AuHg NpFe AgTi ____ FeNp |
-  PPROP "ZG "j167y2 "|HgAu ____ ____ ____ CuUr PbSn ____ AuHg NpFe ____ TiAg FeNp |
-  PPROP "ZG "j246y3 "|HgHg PuFe SnTi ____ CuNp ____ ____ AuPb NpCu ____ ____ FePu |
-  PPROP "ZG "j26y34 "|HgHg PuFe SnTi UrAg ____ ____ ____ AuPb NpCu ____ ____ FePu |
-  PPROP "ZG "j2k6x5 "|HgHg PuFe ____ ____ CuNp PbAu ____ ____ ____ AgUr TiSn FePu |
-  PPROP "ZG "j2k6y3 "|HgHg PuFe SnTi ____ ____ PbAu ____ AuPb ____ ____ TiSn FePu |
-  PPROP "ZG "j346y5 "|NpCu ____ TiSn FePu HgHg PuFe ____ ____ CuNp ____ ____ AuPb |
-  PPROP "ZG "j3k5x4 "|HgAu ____ SnPb UrCu ____ ____ ____ AuHg NpFe AgTi ____ FeNp |
-  PPROP "ZG "k135x4 "|____ CuUr PbSn ____ ____ NpFe ____ TiAg FeNp HgAu ____ SnPb |
-  PPROP "ZG "k157x6 "|HgHg PuFe SnTi ____ CuNp PbAu ____ ____ NpCu ____ ____ FePu |
-  PPROP "ZG "k1j6y7 "|____ CuUr PbSn ____ AuHg NpFe ____ TiAg FeNp HgAu ____ ____ |
-  PPROP "ZG "k257x1 "|NpCu ____ TiSn FePu HgHg PuFe ____ ____ CuNp PbAu ____ ____ |
-  PPROP "ZG "k25x17 "|____ AgUr TiSn FePu HgHg PuFe ____ ____ CuNp PbAu ____ ____ |
-  PPROP "ZG "k2j5x1 "|____ ____ TiSn FePu HgHg PuFe SnTi ____ ____ PbAu ____ AuPb |
-  PPROP "ZG "k2j5y6 "|NpCu ____ ____ FePu HgHg PuFe SnTi UrAg ____ ____ ____ AuPb |
-  PPROP "ZG "k345x2 "|UrCu ____ ____ ____ AuHg NpFe AgTi ____ FeNp HgAu ____ SnPb |
-  PPROP "ZG "n167x4 "|HgAu ____ ____ UrCu ____ PbSn ____ AuHg NpFe AgTi ____ FeNp |
-  PPROP "ZG "n345y7 "|____ CuUr ____ ____ AuHg NpFe ____ TiAg FeNp HgAu ____ SnPb |
- PPROP "ZG "j2k56x4 "|HgHg PuFe ____ ____ CuNp ____ ____ AuPb NpCu ____ TiSn FePu |
- PPROP "ZG "j3k56x4 "|HgTi ____ SnNp UrAu ____ ____ ____ AuUr NpSn ____ TiHg FeFe |
- PPROP "ZG "k1j56y7 "|____ AuUr NpSn ____ TiHg FeFe HgTi ____ SnNp UrAu ____ ____ |
- PPROP "ZG "k2j56y7 "|NpCu ____ ____ FePu HgHg PuFe SnTi ____ CuNp PbAu ____ ____ |
+Pprop "zg "j136y7  "|____ ____ SnPb UrCu ____ PbSn ____ AuHg NpFe AgTi ____ FeNp |
+Pprop "zg "j167y2  "|HgAu ____ ____ ____ CuUr PbSn ____ AuHg NpFe ____ TiAg FeNp |
+Pprop "zg "j17k2   "|____ ____ ____ MnFe CuTi PbAg ____ AuAu ____ AgPb TiCu FeMn |
+Pprop "zg "j17     "|____ ____ SnAu ____ CuPb PbCu ____ AuSn ____ AgHg TiFe FeTi |
+Pprop "zg "j17y2   "|HgAg ____ ____ ____ CuPb PbCu ____ AuSn ____ AgHg TiFe FeTi |
+Pprop "zg "j236    "|HgHg PuFe ____ UrAg ____ PbAu ____ AuPb NpCu ____ ____ FePu |
+Pprop "zg "j23     "|HgHg PuFe ____ UrAg ____ PbAu ____ AuPb ____ AgUr ____ FePu |
+Pprop "zg "j23k6   "|HgHg PuFe ____ UrAg ____ PbAu ____ AuPb ____ ____ TiSn FePu |
+Pprop "zg "j246y3  "|HgHg PuFe SnTi ____ CuNp ____ ____ AuPb NpCu ____ ____ FePu |
+Pprop "zg "j256    "|FeCu HgMn ____ ____ MnHg CuFe PbTi ____ AuNp ____ ____ TiPb |
+Pprop "zg "j25     "|FeCu HgMn ____ ____ MnHg CuFe PbTi ____ ____ NpAu ____ TiPb |
+Pprop "zg "j25y6   "|TiCu FeMn ____ ____ SnHg MnFe CuTi PbAg ____ ____ ____ AgPb |
+Pprop "zg "j26     "|HgHg PuFe ____ ____ CuNp PbAu ____ AuPb NpCu ____ ____ FePu |
+Pprop "zg "j26y34  "|HgHg PuFe SnTi UrAg ____ ____ ____ AuPb NpCu ____ ____ FePu |
+Pprop "zg "j26y3   "|HgHg PuFe SnTi ____ ____ PbAu ____ AuPb NpCu ____ ____ FePu |
+Pprop "zg "j2      "|HgHg PuFe ____ ____ CuNp PbAu ____ AuPb ____ AgUr ____ FePu |
+Pprop "zg "j2k34   "|TiCu FeMn ____ ____ ____ MnFe CuTi PbAg ____ AuAu ____ AgPb |
+Pprop "zg "j2k56   "|HgHg PuFe ____ ____ CuNp PbAu ____ ____ NpCu ____ TiSn FePu |
+Pprop "zg "j2k56x4 "|HgHg PuFe ____ ____ CuNp ____ ____ AuPb NpCu ____ TiSn FePu |
+Pprop "zg "j2k5    "|FeCu HgMn ____ ____ MnHg CuFe ____ ____ AuNp NpAu ____ TiPb |
+Pprop "zg "j2k6    "|HgHg PuFe ____ ____ CuNp PbAu ____ AuPb ____ ____ TiSn FePu |
+Pprop "zg "j2k6x5  "|HgHg PuFe ____ ____ CuNp PbAu ____ ____ ____ AgUr TiSn FePu |
+Pprop "zg "j2k6y3  "|HgHg PuFe SnTi ____ ____ PbAu ____ AuPb ____ ____ TiSn FePu |
+Pprop "zg "j2y3    "|HgHg PuFe SnTi ____ ____ PbAu ____ AuPb ____ AgUr ____ FePu |
+Pprop "zg "j346y5  "|NpCu ____ TiSn FePu HgHg PuFe ____ ____ CuNp ____ ____ AuPb |
+Pprop "zg "j34k6   "|HgSn ____ SnHg MnFe CuTi ____ ____ AuAu ____ ____ TiCu FeMn |
+Pprop "zg "j36     "|HgAu ____ SnPb UrCu ____ PbSn ____ AuHg NpFe ____ ____ FeNp |
+Pprop "zg "j3      "|HgSn ____ SnHg UrFe ____ PbAg ____ AuAu ____ AgPb ____ FeUr |
+Pprop "zg "j3k56x4 "|HgTi ____ SnNp UrAu ____ ____ ____ AuUr NpSn ____ TiHg FeFe |
+Pprop "zg "j3k5    "|NpCu ____ TiSn FePu ____ PuFe ____ ____ CuNp PbAu ____ AuPb |
+Pprop "zg "j3k5x4  "|HgAu ____ SnPb UrCu ____ ____ ____ AuHg NpFe AgTi ____ FeNp |
+Pprop "zg "j3k6    "|HgTi ____ SnNp UrAu ____ PbPb ____ AuUr ____ ____ TiHg FeFe |
+Pprop "zg "j56     "|UrCu ____ PbSn ____ AuHg NpFe AgTi ____ FeNp ____ ____ SnPb |
+Pprop "zg "j56y7   "|UrCu ____ PbSn ____ AuHg NpFe AgTi ____ FeNp HgAu ____ ____ |
+Pprop "zg "j5      "|PbCu ____ AuSn ____ AgHg TiFe FeTi ____ ____ SnAu ____ CuPb |
+Pprop "zg "j5y6    "|PbCu ____ AuSn ____ AgHg TiFe FeTi HgAg ____ ____ ____ CuPb |
+Pprop "zg "j6      "|HgAu ____ SnPb ____ CuUr PbSn ____ AuHg NpFe ____ ____ FeNp |
+Pprop "zg "k125    "|____ AgUr ____ FePu HgHg PuFe ____ ____ CuNp PbAu ____ AuPb |
+Pprop "zg "k12     "|____ AgUr ____ FePu HgHg PuFe ____ UrAg ____ PbAu ____ AuPb |
+Pprop "zg "k12j5   "|____ AgUr ____ FePu HgHg PuFe SnTi ____ ____ PbAu ____ AuPb |
+Pprop "zg "k135x4  "|____ CuUr PbSn ____ ____ NpFe ____ TiAg FeNp HgAu ____ SnPb |
+Pprop "zg "k157x6  "|HgHg PuFe SnTi ____ CuNp PbAu ____ ____ NpCu ____ ____ FePu |
+Pprop "zg "k15     "|____ CuUr PbSn ____ AuHg NpFe ____ ____ FeNp HgAu ____ SnPb |
+Pprop "zg "k17j5   "|TiCu FeMn HgSn ____ SnHg MnFe CuTi ____ ____ AuAu ____ ____ |
+Pprop "zg "k1      "|____ FeUr HgSn ____ SnHg UrFe ____ PbAg ____ AuAu ____ AgPb |
+Pprop "zg "k1j56y7 "|____ AuUr NpSn ____ TiHg FeFe HgTi ____ SnNp UrAu ____ ____ |
+Pprop "zg "k1j5    "|____ AuUr NpSn ____ TiHg FeFe HgTi ____ ____ UrAu ____ PbPb |
+Pprop "zg "k1j6    "|____ PuFe SnTi ____ CuNp PbAu ____ AuPb NpCu ____ ____ FePu |
+Pprop "zg "k1j6y7  "|____ CuUr PbSn ____ AuHg NpFe ____ TiAg FeNp HgAu ____ ____ |
+Pprop "zg "k256    "|HgMn ____ ____ MnHg CuFe PbTi ____ ____ NpAu ____ TiPb FeCu |
+Pprop "zg "k257x1  "|NpCu ____ TiSn FePu HgHg PuFe ____ ____ CuNp PbAu ____ ____ |
+Pprop "zg "k25     "|NpCu ____ ____ FePu HgHg PuFe ____ ____ CuNp PbAu ____ AuPb |
+Pprop "zg "k25x17  "|____ AgUr TiSn FePu HgHg PuFe ____ ____ CuNp PbAu ____ ____ |
+Pprop "zg "k25x1   "|____ ____ TiSn FePu HgHg PuFe ____ ____ CuNp PbAu ____ AuPb |
+Pprop "zg "k26     "|HgMn ____ ____ MnHg CuFe PbTi ____ AuNp ____ ____ TiPb FeCu |
+Pprop "zg "k26x5   "|HgSn ____ ____ MnFe CuTi PbAg ____ ____ ____ AgPb TiCu FeMn |
+Pprop "zg "k2j56   "|NpCu ____ ____ FePu HgHg PuFe SnTi ____ CuNp ____ ____ AuPb |
+Pprop "zg "k2j56y7 "|NpCu ____ ____ FePu HgHg PuFe SnTi ____ CuNp PbAu ____ ____ |
+Pprop "zg "k2j5    "|NpCu ____ ____ FePu HgHg PuFe SnTi ____ ____ PbAu ____ AuPb |
+Pprop "zg "k2j5x1  "|____ ____ TiSn FePu HgHg PuFe SnTi ____ ____ PbAu ____ AuPb |
+Pprop "zg "k2j5y6  "|NpCu ____ ____ FePu HgHg PuFe SnTi UrAg ____ ____ ____ AuPb |
+Pprop "zg "k2j6    "|HgMn ____ ____ MnHg CuFe PbTi ____ AuNp NpAu ____ ____ FeCu |
+Pprop "zg "k2      "|NpCu ____ ____ FePu HgHg PuFe ____ UrAg ____ PbAu ____ AuPb |
+Pprop "zg "k2x1    "|____ ____ TiSn FePu HgHg PuFe ____ UrAg ____ PbAu ____ AuPb |
+Pprop "zg "k345x2  "|UrCu ____ ____ ____ AuHg NpFe AgTi ____ FeNp HgAu ____ SnPb |
+Pprop "zg "k34     "|PbCu ____ AuSn ____ ____ TiFe FeTi HgAg ____ SnAu ____ CuPb |
+Pprop "zg "k34x2   "|PbCu ____ ____ ____ AgHg TiFe FeTi HgAg ____ SnAu ____ CuPb |
+Pprop "zg "k56     "|HgAu ____ SnPb ____ CuUr PbSn ____ ____ NpFe ____ TiAg FeNp |
+Pprop "zg "k56x4   "|HgAu ____ SnPb ____ CuUr ____ ____ AuHg NpFe ____ TiAg FeNp |
+Pprop "zg "k5      "|UrCu ____ PbSn ____ AuHg NpFe ____ ____ FeNp HgAu ____ SnPb |
+Pprop "zg "k6      "|HgAg ____ SnAu ____ CuPb PbCu ____ AuSn ____ ____ TiFe FeTi |
+Pprop "zg "k6x5    "|HgAg ____ SnAu ____ CuPb PbCu ____ ____ ____ AgHg TiFe FeTi |
+Pprop "zg "n0      "|HgCu ____ SnSn ____ CuHg PbFe ____ AuAg ____ AgAu ____ FePb |
+Pprop "zg "n167    "|NpCu ____ ____ FePu ____ PuFe SnTi ____ CuNp PbAu ____ AuPb |
+Pprop "zg "n167x4  "|HgAu ____ ____ UrCu ____ PbSn ____ AuHg NpFe AgTi ____ FeNp |
+Pprop "zg "n25x6   "|TiCu FeMn HgSn ____ ____ MnFe CuTi PbAg ____ ____ ____ AgPb |
+Pprop "zg "n26y5   "|____ ____ SnHg MnFe CuTi PbAg ____ ____ ____ AgPb TiCu FeMn |
+Pprop "zg "n345    "|____ PuFe ____ ____ CuNp PbAu ____ AuPb NpCu ____ TiSn FePu |
+Pprop "zg "n345y7  "|____ CuUr ____ ____ AuHg NpFe ____ TiAg FeNp HgAu ____ SnPb |
+Pprop "zg "n45y2   "|HgTi ____ ____ UrAu ____ PbPb ____ AuUr NpSn ____ TiHg FeFe |
+Pprop "zg "n5y2    "|HgMn ____ ____ MnHg CuFe ____ ____ AuNp NpAu ____ TiPb FeCu |
+Pprop "zg "n67x2   "|____ AuUr ____ ____ TiHg FeFe HgTi ____ SnNp UrAu ____ PbPb |
+Pprop "zg "n6x2    "|FeCu HgMn ____ ____ MnHg CuFe PbTi ____ AuNp NpAu ____ ____ |
 
