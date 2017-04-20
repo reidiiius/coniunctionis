@@ -1,13 +1,14 @@
 #!/usr/bin/env ucblogo
 
-LOAD "zeitgeist.lg
 LOAD "heraclitus.lg
+LOAD "tungsten.lg
 
 MAKE "CASEIGNOREDP "false ; properties case-sensitive
 
 design.Lithographic
 
 ERALL
+; POALL
 ; SHOW CONTENTS
 
 BYE

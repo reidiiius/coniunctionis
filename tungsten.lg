@@ -1,0 +1,109 @@
+#!/usr/bin/env ucblogo
+
+TO str.An :val
+  OUTPUT WORD (str.Tail 15 :val) (str.Head 45 :val)
+END
+
+TO str.Bj :val
+  OUTPUT WORD (str.Tail 10 :val) (str.Head 50 :val)
+END
+
+TO str.Bn :val
+  OUTPUT WORD (str.Tail  5 :val) (str.Head 55 :val)
+END
+
+TO str.Cn :val
+  OUTPUT WORD (str.Tail  0 :val) (str.Head 60 :val)
+END
+
+TO str.Dn :val
+  OUTPUT WORD (str.Tail 50 :val) (str.Head 10 :val)
+END
+
+TO str.En :val
+  OUTPUT WORD (str.Tail 40 :val) (str.Head 20 :val)
+END
+
+TO str.Fk :val
+  OUTPUT WORD (str.Tail 30 :val) (str.Head 30 :val)
+END
+
+TO str.Fn :val
+  OUTPUT WORD (str.Tail 35 :val) (str.Head 25 :val)
+END
+
+TO str.Gn :val
+  OUTPUT WORD (str.Tail 25 :val) (str.Head 35 :val)
+END
+
+TO str.Head :nbr :val
+  TEST :nbr >= COUNT :val
+  ifTRUE  [
+    OUTPUT THING "val
+  ]
+  ifFALSE [
+    OUTPUT str.Head :nbr BL :val
+  ]
+END
+
+TO str.Tail :nbr :val
+  TEST :nbr >= COUNT :val
+  ifTRUE  [
+    OUTPUT THING "val
+  ]
+  ifFALSE [
+   OUTPUT str.Tail :nbr BF :val
+  ]
+END
+
+TO tuning.all4ths :key :val
+  PR (WORD ctrl.ht :key "-beadgcf-sv sequeNoise)
+  PR  WORD ctrl.ht str.Fn :val
+  PR  WORD ctrl.ht str.Cn :val
+  PR  WORD ctrl.ht str.Gn :val
+  PR  WORD ctrl.ht str.Dn :val
+  PR  WORD ctrl.ht str.An :val
+  PR  WORD ctrl.ht str.En :val
+  PR  WORD ctrl.ht str.Bn :val
+END
+
+TO tuning.augmenTriad :val
+  PR  WORD ctrl.ht str.Dn :val
+  PR  WORD ctrl.ht str.Bj :val
+  PR  WORD ctrl.ht str.Fk :val
+END
+
+TO tuning.cello5ths :key :val
+  PR (WORD ctrl.ht :key "-cgdae-sv sequeNoise)
+  PR  WORD ctrl.ht str.En :val
+  PR  WORD ctrl.ht str.An :val
+  PR  WORD ctrl.ht str.Dn :val
+  PR  WORD ctrl.ht str.Gn :val
+  PR  WORD ctrl.ht str.Cn :val
+END
+
+TO tuning.maj3rds :key :val
+  PR (WORD ctrl.ht :key "-fkbjdn-sv sequeNoise)
+  REPEAT 2 [
+    tuning.augmenTriad :val
+  ]
+END
+
+TO tuning.stdGtr :key :val
+  PR (WORD ctrl.ht :key "-eadgbe-sv sequeNoise)
+  PR  WORD ctrl.ht str.En :val
+  PR  WORD ctrl.ht str.Bn :val
+  PR  WORD ctrl.ht str.Gn :val
+  PR  WORD ctrl.ht str.Dn :val
+  PR  WORD ctrl.ht str.An :val
+  PR  WORD ctrl.ht str.En :val
+END
+
+TO tuning.triTones :key :val
+  PR (WORD ctrl.ht :key "-bfbf-sv sequeNoise)
+  PR  WORD ctrl.ht str.Fn :val
+  PR  WORD ctrl.ht str.Bn :val
+  PR  WORD ctrl.ht str.Fn :val
+  PR  WORD ctrl.ht str.Bn :val
+END
+
