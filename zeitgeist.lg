@@ -1,7 +1,5 @@
 #!/usr/bin/env ucblogo
 
-MAKE "sequeNoise RANDOM 2147483646
-
 Pprop "zg "j136y7  "|____ ____ SnPb UrCu ____ PbSn ____ AuHg NpFe AgTi ____ FeNp |
 Pprop "zg "j167y2  "|HgAu ____ ____ ____ CuUr PbSn ____ AuHg NpFe ____ TiAg FeNp |
 Pprop "zg "j17k2   "|____ ____ ____ MnFe CuTi PbAg ____ AuAu ____ AgPb TiCu FeMn |
