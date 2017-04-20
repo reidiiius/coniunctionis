@@ -39,26 +39,34 @@ END
 
 TO design.Planographic :qp
   CLEARTEXT
-  LOCAL [sequeNoise cyclonyms]
-  MAKE "sequeNoise RANDOM 2147483646
+
+  LOCAL [cyclonyms sequeNoise zeitgeist]
   MAKE "cyclonyms [j0 j367 j37 j7 k0 k14 k145 k4 n14 n145 n367 n37 n4 n7]
+  MAKE "sequeNoise RANDOM 2147483646
+  MAKE "zeitgeist PLIST "zg
+
   IF (EMPTYP THING "qp) [
     LOCALMAKE "qp [n0 n0]
   ]
+
+  IF (MEMBERP FIRST :qp [bye exit quit stop]) [ STOP ]
+
   IF (MEMBERP FIRST :qp cyclonyms) [
     LOCALMAKE "qp (FPUT "n0 :qp)
   ]
   IF (MEMBERP  LAST :qp cyclonyms) [
     LOCALMAKE "qp (LPUT "n0 :qp)
   ]
-  IF AND (MEMBERP FIRST :qp PLIST "zg) (MEMBERP LAST :qp PLIST "zg) [
+
+  TEST AND (MEMBERP FIRST :qp zeitgeist) (MEMBERP LAST :qp zeitgeist)
+  ifTRUE [
     ctrl.vt 1
-      tuning.all4ths (FIRST :qp) (GPROP "zg (FIRST :qp))
+      tuning.stdGtr (FIRST :qp) (GPROP "zg (FIRST :qp))
     ctrl.vt 1
-      tuning.all4ths ( LAST :qp) (GPROP "zg ( LAST :qp))
+      tuning.stdGtr ( LAST :qp) (GPROP "zg ( LAST :qp))
     ctrl.vt 1
   ]
-  IF OR (NOT MEMBERP FIRST :qp PLIST "zg) (NOT MEMBERP LAST :qp PLIST "zg)[
+  ifFALSE [
     ctrl.vt 2
       PR SE ctrl.ht [Check your selection!]
     ctrl.vt 1
